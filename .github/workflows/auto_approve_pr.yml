@@ -1,16 +1,20 @@
 name: Auto Approval of Bot Pull Requests
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, reopened]
+
+permissions:
+  contents: read
 
 jobs:
   auto_approve:
     name: Auto Approve Pull Request
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
+    permissions:
+      pull-requests: write
+
+    steps:
       - name: Auto Approve Pull Request
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
