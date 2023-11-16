@@ -1,4 +1,4 @@
-name: Auto Approval of Bot Pull Requests
+name: Auto  Approval  of  Bot  Pull  Requests
 on:
   pull_request:
     types: [opened, reopened]
